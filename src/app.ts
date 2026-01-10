@@ -14,9 +14,23 @@ app.use(cors({
 ));
 
 // better auth router 
-app.all("/api/auth/*splat", toNodeHandler(auth));
+app.all("/api/v1/auth/*splat", toNodeHandler(auth));
 
-app.use('/api/v1',routes);
+async function createAdmin() {
+    await auth.api.createUser({
+        body: {
+            name: "Akash",
+            email: "akashabdulmazid@gmail.com",
+            password: "123456",
+            role: "admin"
+        }
+    })
+};
+
+// createAdmin();
+
+app.use('/api/v1', routes);
+
 
 
 

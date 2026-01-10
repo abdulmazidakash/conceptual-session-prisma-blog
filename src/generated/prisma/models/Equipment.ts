@@ -377,8 +377,16 @@ export type EquipmentScalarRelationFilter = {
   isNot?: Prisma.EquipmentWhereInput
 }
 
+export type StringFieldUpdateOperationsInput = {
+  set?: string
+}
+
 export type EnumEquipmentStatusFieldUpdateOperationsInput = {
   set?: $Enums.EquipmentStatus
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
 }
 
 export type EquipmentCreateNestedOneWithoutUsageLogsInput = {
